@@ -1,0 +1,32 @@
+
+{%block title %}Index of User{%endblock%}
+{%block head%}
+    <style type="text/css">
+        
+    </style>
+{%endblock%}
+
+{%block body %}
+<h1>Extending From Layout</h1>
+{%if y == "h3ct0r"%}
+    Welcome SuperAdmin:<bold> {{y}}</bold>
+{%elif y == "Jade"%}
+    Welcome Normal User {{y}}
+{%else%}
+    Welcome Stranger,  Want to register¡!
+{%endif%}
+<p>
+    <ul>
+        {%for i in frutas%}
+            <li>{{i}}</li>
+        {%endfor%}
+    </ul>
+Renderizando un diccionario:
+    <ul>
+        {%for i in dicti%}
+            <li>{{i}}</li>
+        {%endfor%}
+    </ul>
+</p>
+Testear todas las ds de python
+{%endblock%}

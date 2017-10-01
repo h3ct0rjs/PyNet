@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+    {% block scripts %}
+        {{ super() }}
+        {{moment.include_moment()}}
+        {{moment.lang('es') }}
+    {%endblock %}
+
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+    type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
+    type="image/x-icon">
+{% endblock %}
+
+{% block title %} Bootstrap-UTPFlask :) {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">UTPReports</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/contact"> Contacto</a></li>
+                <li><a href="/about">Acerca de</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Wellcome Stranger:> {{val}}</h1>
+        <p>Fecha y Hora Actual: {{ moment(current_time).format('LLLL') }}.</p>
+        <p>Sucedio hace {{ moment(current_time).fromNow(refresh=True) }}</p>
+    </div>
+    </div>
+{% endblock %}
